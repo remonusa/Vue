@@ -1,0 +1,52 @@
+<html>
+<head>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+<div id="vue-app">
+
+    <h1> Conditional </h1>
+    <div>
+<a target="_blank"href="https://www.youtube.com/watch?v=0EJqZLcwVLY&index=12&list=PL4cUxeGkcC9gQcYgjhBoeQH7wiAyZNrYa"> YouTube Conditional Tutorial</a>
+</div>
+<p> </p>
+<button v-on:click="error = !error"> Toggle Error  </button>
+<button v-on:click="success = !success"> Toggle success  </button>
+
+
+<!-- <p v-if="error"> There has been an error</p>    -->
+<p v-show="error"> There has been an error</p>
+<p v-show="success"> Whoooo, success </p>
+</div>
+
+
+</body>
+
+<script>
+
+new Vue({
+    el: '#vue-app',
+    data: {
+        error: false,
+        success: false
+
+      
+          },
+    methods: {
+
+
+    },
+    computed: {
+ 
+    }
+
+
+
+        })
+</script>
+<style>
+
+
+</style>
+</html>
