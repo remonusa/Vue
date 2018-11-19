@@ -1,0 +1,76 @@
+<html>
+<head>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+<div id="AddBlog">
+
+
+        <form>
+                <label> Blog Title:</label>
+                <input type="text"  v-model.lazy="Blog.title" required />
+                <label> Blog Content:</label>
+                <textarea v-model.lazy="Blog.content"> </textarea>
+                     </form>
+
+        <div id="preview">
+            <h3> Preview Blog</h3>
+            <p> Blog title:  </p>
+                
+                <p>  {{ Blog.title }}  </p>
+             
+            <p> Blog content   </p>
+<p>  {{  Blog.content  }}   </p>
+        </div>
+
+</div>
+</body>
+
+<script>
+
+new Vue({
+    el: '#AddBlog',
+    data: {
+        Blog: {
+            title: "",
+            content: ""
+
+        }
+      
+      
+          },
+    methods: {
+
+
+    },
+    computed: {
+ 
+    }
+
+
+
+        })
+</script>
+<style>
+#AddBlog *{
+
+    box-sizing:border-box;
+
+}
+#AddBlog{
+
+    margin: 20px auto;
+    max-width: 800px;
+
+}
+label{
+
+    display: block;
+    margin: 20px 0 10px;
+}
+
+
+
+</style>
+</html>
