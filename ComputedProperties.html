@@ -1,0 +1,99 @@
+<script src="https://unpkg.com/vue"></script>
+
+<div id="root">
+
+<h1> Functions and Computed Properties</h1>
+
+
+<p>
+<button v-on:click="a++"> Add a A</button>
+<button v-on:click="b++"> Add a b</button>
+
+</p>
+<p> A - {{ a }} </p>
+<p> B - {{ b }} </p>
+
+
+
+<p> Age + A = {{ AddToA() }} </p>
+<p> Age + B = {{ AddToB() }} </p>
+
+	
+	<p>   Age is  {{ Age}}</p>
+
+	<div>
+
+			<h1> Computed Properties</h1>
+			Computed Properties work the same way the function does but it doesn't have ()
+			<p>
+					<button v-on:click="x++"> Add a X</button>
+					<button v-on:click="y++"> Add a Y</button>
+					
+					</p>
+					<p> X - {{ x }} </p>
+					<p> Y - {{ y }} </p>
+					
+					
+					
+					<p> Age + x = {{ ComputedAddToX }} </p>
+					<p> Age + y = {{ ComputedAddToY }} </p>
+					
+						
+						<p>   Age2 is  {{ Age}}</p>
+
+	</div>
+</div>
+<script>
+new Vue({
+
+	el: '#root',
+	data: {
+	message: "message",
+	a: 0,
+	b: 0,
+	x: 0,
+	y: 0,
+    Age: 20,
+	Age2: 20,
+
+	},
+
+	methods: {
+
+	    AddToA:function(){
+			return this.a + this.Age;
+		},
+		AddToB:function(){
+			return this.b + this.Age;
+		}
+
+		
+
+	},
+	computed: {
+		ComputedAddToX:function(){
+			return this.x + this.Age;
+		},
+		ComputedAddToY:function(){
+			return this.y + this.Age;
+
+	}
+	}
+
+
+})
+</script>
+
+
+<style>
+#canvas{
+width: 600px;
+padding: 200px 20px;
+text-align: center;
+border: 1px solid #333;
+
+
+}
+
+
+</style>
