@@ -1,0 +1,100 @@
+<html>
+<head>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+<div id="CheckBox">
+
+<h1> Check Box Binding Example</h1>
+        <form>
+                <label> Item Name:</label>
+                <input type="text"  v-model.lazy="Blog.title" required />
+                <label> Description:</label>
+                <textarea v-model.lazy="Blog.content"> </textarea>
+                <div id="checkboxes">
+                    <label> Tomatto</label>
+                    <input type="checkbox" value="Tomatto" v-model="Blog.catagories"/>
+                    <label> Mushroom</label>
+                    <input type="checkbox" value="Mushroom" v-model="Blog.catagories"/>
+                    <label> Onion</label>
+                    <input type="checkbox" value="Onion" v-model="Blog.catagories"/>
+                    <label> Peperoni </label>
+                    <input type="checkbox" value="Peperoni" v-model="Blog.catagories"/>
+
+                </div>
+                     </form>
+
+        <div id="preview">
+            <h3> Preview Blog</h3>
+            <p> Blog title:  </p>
+                
+                <p>  {{ Blog.title }}  </p>
+             
+            <p> Blog content   </p>
+<p>  {{  Blog.content  }}   </p>
+<p> Blog catagories: </p>
+<ul>
+    <li v-for="catagory in Blog.catagories"> {{ catagory }}</li>
+</ul>
+        </div>
+
+</div>
+</body>
+
+<script>
+
+new Vue({
+    el: '#CheckBox',
+    data: {
+        Blog: {
+            title: "",
+            content: "",
+            catagories: []
+
+        }
+
+      
+      
+          },
+    methods: {
+
+
+    },
+    computed: {
+ 
+    }
+
+
+
+        })
+</script>
+<style>
+#AddBlog *{
+
+    box-sizing:border-box;
+
+}
+#AddBlog{
+
+    margin: 20px auto;
+    max-width: 800px;
+
+}
+label{
+
+    display: block;
+    margin: 20px 0 10px;
+}
+#checkboxes input{
+    display: inline-block;
+    margin-right: 10px;
+}
+#checkboxes label{
+    display: inline-block;
+}
+
+
+
+</style>
+</html>
